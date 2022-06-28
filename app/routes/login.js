@@ -1,11 +1,11 @@
 const express = require('express');
 const jwt = require('jsonwebtoken');
-const router = express.Router();
-//const User = require ('../models/User');
+const Router = express.Router();
+const User = require ('../models/User.js');
 const bcrypt = require("bcrypt");
 const saltRounds = 10;
 
-router.post('/', async(req, res) => {
+Router.post('/', async(req, res) => {
     const body = req.body;
 
   try {
@@ -47,4 +47,4 @@ router.post('/', async(req, res) => {
   }
 })
 
-module.exports = router;
+module.exports = Router;

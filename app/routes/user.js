@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 // Importamos modelo Tarea
-//const User = require ('../models/User');
+const User = require ('../models/User.js');
 const {verificarAuth, verificarAdministrador} = require('../middlewares/autenticacion.js');
 // Hash Contraseña
 const bcrypt = require('bcrypt');
