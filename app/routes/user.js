@@ -62,7 +62,11 @@ router.put('/usuario/:id', [verificarAuth, verificarAdministrador], async(req, r
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  User.find({}) 
+  .then(users =>{
+      if(users.length) return res.status(200).send({users});
+      return res.status(204).send({message: 'NO CONTENT'});
+  }).catch(error => res.status(500).send({error}));
 });
 
 module.exports = router;
