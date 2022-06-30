@@ -5,10 +5,10 @@ const {verificarAuth, verificarAdministrador} = require('../middlewares/autentic
 
 const Router = express.Router();
 
-Router.get('/',  CategoriaCtrl.index, verificarAuth, verificarAdministrador) //api.com/Categoria/
-        .post('/',  CategoriaCtrl.create, verificarAuth, verificarAdministrador)
-        .get('/:key/:value',  CategoriaCtrl.find, CategoriaCtrl.show, verificarAuth, verificarAdministrador) 
-        .put('/:key/:value',  CategoriaCtrl.find,CategoriaCtrl.update, verificarAuth, verificarAdministrador)
-        .delete('/:key/:value',  CategoriaCtrl.find,CategoriaCtrl.remove, verificarAuth, verificarAdministrador);
+Router.get('/', verificarAuth,  CategoriaCtrl.index) //api.com/Categoria/
+        .post('/', verificarAuth,  CategoriaCtrl.create)
+        .get('/:key/:value', verificarAuth,  CategoriaCtrl.find, CategoriaCtrl.show) 
+        .put('/:key/:value', verificarAuth,  CategoriaCtrl.find,CategoriaCtrl.update)
+        .delete('/:key/:value', verificarAuth,  CategoriaCtrl.find,CategoriaCtrl.remove);
 
 module.exports = Router; 
