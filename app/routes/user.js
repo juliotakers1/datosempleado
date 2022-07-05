@@ -36,7 +36,7 @@ router.post('/nuevo-usuario', async (req, res) => {
   }
 
 });
-router.put('/usuario/:id', [verificarAuth, verificarAdministrador], async(req, res) => {
+router.put('/:key/:value', async(req, res) => {
 
   const _id = req.params.id;
    const  body = _.pick(req.body, ['nombre', 'email', 'pass', 'activo']);
