@@ -7,6 +7,15 @@ function index(req,res){
         return res.status(204).send({message: 'NO CONTENT'});
     }).catch(error => res.status(500).send({error}));
 }
+
+function verDoctor(req,res){
+    Doctor.findOne({id:req.body.id}) 
+    .then(doctor =>{
+        if(doctor) return res.status(200).send({doctor});
+        return res.status(204).send({message: 'NO CONTENT'});
+    }).catch(error => res.status(500).send({error}));
+}
+
 function show(req,res){
     if(req.body.error) return res.status(500).send({error});
 
@@ -55,5 +64,6 @@ module.exports = {
     create,
     update,
     remove,
-    find
+    find,
+    verDoctor
 }

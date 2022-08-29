@@ -14,6 +14,13 @@ function show(req,res){
     let pacientes = req.body.pacientes;
     return res.status(200).send({ pacientes});
 }
+function verPaciente(req,res){
+    Paciente.findOne({id:req.body.id}) 
+    .then(paciente =>{
+        if(paciente) return res.status(200).send({paciente});
+        return res.status(204).send({message: 'NO CONTENT'});
+    }).catch(error => res.status(500).send({error}));
+}
 
 function create(req,res){
     console.log(req.body);
@@ -55,5 +62,6 @@ module.exports = {
     create,
     update,
     remove,
-    find
+    find,
+    verPaciente
 }
