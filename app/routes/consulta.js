@@ -5,7 +5,7 @@ const ConsultaCtrl = require('../controllers/ConsultaController');
 const Router = express.Router();
 
 Router.get('/',ConsultaCtrl.index) //api.com/Consulta/
-        .get('/ver/:value', ConsultaCtrl.verConsulta)
+        .get('/:key/:value', ConsultaCtrl.verConsulta)
         .post('/', ConsultaCtrl.create)
         .get('/:key/:value', ConsultaCtrl.find, ConsultaCtrl.show) 
         .put('/:key/:value', ConsultaCtrl.find,ConsultaCtrl.update)
