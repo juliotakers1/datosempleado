@@ -9,7 +9,7 @@ function index(req,res){
 }
 
 function verConsulta(req,res){
-    Consulta.bios.find({id:req.body.id}) 
+    Consulta.findMany({id:req.body.id}) 
     .then(consultas =>{
         if(consultas.length) return res.status(200).send({consultas});
         return res.status(204).send({message: 'NO CONTENT'});
