@@ -9,7 +9,7 @@ function index(req,res){
 }
 
 function verConsulta(req,res){
-    Consulta.findById({id:req.body.codigo}) 
+    Consulta.findById({codigo:req.body.codigo}) 
     .then(consultas =>{
         if(consultas.length) return res.status(200).send({consultas});
         return res.status(204).send({message: 'NO CONTENT'});
