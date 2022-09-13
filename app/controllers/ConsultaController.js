@@ -10,8 +10,8 @@ function index(req,res){
 
 function verConsulta(req,res){
     Consulta.find({id:req.body.id}) 
-    .then(consulta =>{
-        if(consulta) return res.status(200).send({consulta});
+    .then(consultas =>{
+        if(consultas.length) return res.status(200).send({consultas});
         return res.status(204).send({message: 'NO CONTENT'});
     }).catch(error => res.status(500).send({error}));
 }
