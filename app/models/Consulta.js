@@ -6,6 +6,10 @@ const ConsultaSchema = new mongoose.Schema({
             type: String,
             required: false
                 },
+                codigo:{
+                    type: String,
+                required: false
+                },
             paciente: {
                 type: String,
                 required: false
