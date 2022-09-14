@@ -9,7 +9,9 @@ function index(req,res){
 }
 
 function verConsulta(req,res){
-    Consulta.findMany({codigo:req.body.codigo})  
+    let query = {};
+    query[req.params.key] = req.params.value;
+    Consulta.find(query)  
     .then(consultas =>{
         if(consultas.length) return res.status(200).send({consultas});
         return res.status(204).send({message: 'NO CONTENT'});
