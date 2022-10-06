@@ -4,7 +4,9 @@ const cors = require('cors');
 const App = express();
 
 
-const Paciente = require('./routes/paciente');
+const Embarazo = require('./routes/embarazo');
+const Pediatria = require('./routes/pediatria');
+const Adulto = require('./routes/adulto');
 const Doctor = require('./routes/doctor');
 const User = require('./routes/user');
 const Login = require('./routes/login');
@@ -15,7 +17,9 @@ App.use(bodyParser.urlencoded({extended:false}));
 App.use(cors());
  
 
-App.use('/paciente',Paciente);
+App.use('/embarazo',Embarazo);
+App.use('/pediatria',Pediatria);
+App.use('/adulto',Adulto);
 App.use('/doctor',Doctor);
 App.use('/user', User);
 App.use('/login', Login);

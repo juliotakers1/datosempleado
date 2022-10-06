@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const PacienteSchema = new mongoose.Schema({
+const PediatriaSchema = new mongoose.Schema({
 
     
   carnetPaciente:{
@@ -105,6 +105,6 @@ const PacienteSchema = new mongoose.Schema({
 
 });
 
-const Paciente = mongoose.model('Paciente',PacienteSchema);
+const Pediatria = mongoose.model('Pediatria',PediatriaSchema);
  
-module.exports = Paciente;
+module.exports = Pediatria;
