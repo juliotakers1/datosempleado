@@ -58,10 +58,6 @@ const CadultoSchema = new mongoose.Schema({
                 type: String,
                 required: false
             },
-            alimentacion:{
-                type: String,
-                required: false
-            },
             antecedentesAlimentacion: {
                 type: String,
                 required: false
