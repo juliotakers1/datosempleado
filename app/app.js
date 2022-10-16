@@ -10,7 +10,11 @@ const Adulto = require('./routes/adulto');
 const Doctor = require('./routes/doctor');
 const User = require('./routes/user');
 const Login = require('./routes/login');
-const Consulta = require('./routes/consulta');
+
+const Cembarazo = require('./routes/cembarazo');
+const Cediatria = require('./routes/cembarazo');
+const Cadulto = require('./routes/cadulto');
+
 const Documento = require('./routes/documento');
 App.use(bodyParser.json());
 App.use(bodyParser.urlencoded({extended:false}));
@@ -24,7 +28,10 @@ App.use('/doctor',Doctor);
 App.use('/user', User);
 App.use('/login', Login);
 App.use('/documento', Documento);
-App.use('/consulta', Consulta);
+
+App.use('/cembarazo', Cembarazo);
+App.use('/cadulto', Cadulto);
+App.use('/cediatria', Cediatria);
  
 
 module.exports = App;

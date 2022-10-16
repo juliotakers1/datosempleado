@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const ConsultaSchema = new mongoose.Schema({
+const CadultoSchema = new mongoose.Schema({
 
     
             doctor: {
@@ -58,11 +58,11 @@ const ConsultaSchema = new mongoose.Schema({
                 type: String,
                 required: false
             },
-            motivoConsulta: {
+            alimentacion:{
                 type: String,
                 required: false
             },
-            historiaEnfermedad: {
+            antecedentesAlimentacion: {
                 type: String,
                 required: false
             },
@@ -82,25 +82,45 @@ const ConsultaSchema = new mongoose.Schema({
                 type: String,
                 required: false
             },
-            enfermedadesCronicas: {
+            alergias:{
                 type: String,
-                required: false
+                require: false
             },
             medicamentoTomado: {
                 type: String,
                 required: false
             },
-            diagnosticoMedico: {
+            enfermedadesCronicas: {
                 type: String,
                 required: false
             },
-            recomendaciones: {
-                type: String,
-                required: false
+            examenFisico:{
+                type: String, 
+                require: false
             },
-            sugerencias: {
-                type: String,
-                required: false
+            hcomentarios:{
+                type: String, 
+                require: false
+            },
+            motivoConsulta:{
+                type: String, 
+                require: false
+            },
+            historiaActual:{
+                type: String, 
+                require: false
+            },
+            diagnostico:{
+                type: String, 
+                require: false
+            },
+            tratamiento:{
+                type: String, 
+                require: false
+            },
+            examenLab:{
+                type: String, 
+                require: false
             },
             usuario: {
                 type: String,
@@ -109,6 +129,6 @@ const ConsultaSchema = new mongoose.Schema({
 
 });
 
-const Consulta = mongoose.model('Consulta',ConsultaSchema);
+const Cadulto = mongoose.model('Cadulto',CadultoSchema);
  
-module.exports = Consulta;
+module.exports = Cadulto;
