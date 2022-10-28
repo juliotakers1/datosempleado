@@ -12,7 +12,7 @@ const User = require('./routes/user');
 const Login = require('./routes/login');
 
 const Cembarazo = require('./routes/cembarazo');
-const Cediatria = require('./routes/cembarazo');
+const Cediatria = require('./routes/cediatria');
 const Cadulto = require('./routes/cadulto');
 
 const Documento = require('./routes/documento');
