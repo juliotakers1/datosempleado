@@ -31,7 +31,7 @@ const PediatriaSchema = new mongoose.Schema({
     required: false
   },
   telefono:{
-    type: Number,
+    type: String,
     required: false 
   },
   direccion:{
@@ -79,7 +79,7 @@ const PediatriaSchema = new mongoose.Schema({
     required: false
   },
   telefonoPadre:{
-    type: Number,
+    type: String,
     required: false 
   },
   nombreMadre:{
@@ -87,7 +87,7 @@ const PediatriaSchema = new mongoose.Schema({
     required: false
   },
   telefonoMadre:{
-    type: Number,
+    type: String,
     required: false 
   },
   urgenciaAvisar:{
@@ -95,7 +95,7 @@ const PediatriaSchema = new mongoose.Schema({
     required:true,
   },
   telefonoUrgencia:{
-    type: Number,
+    type: String,
     required:true
   },
   usuario:{
