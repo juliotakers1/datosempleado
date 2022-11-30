@@ -92,11 +92,11 @@ const AdultoSchema = new mongoose.Schema({
   },
   urgenciaAvisar:{
     type: String,
-    required:true,
+    required:false,
   },
   telefonoUrgencia:{
     type: String,
-    required:true
+    required:false
   },
   usuario:{
     type: String,

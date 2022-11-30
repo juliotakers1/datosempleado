@@ -4,31 +4,31 @@ const DoctorSchema = new mongoose.Schema({
     
       nombres:{
         type: String,
-        required: true
+        required: false
       },
       apellidos:{
         type: String,
-        required: true
+        required: false
       },
       telefono:{
         type: String,
-        required: true
+        required: false
       },
       direccion:{
         type: String,
-        required: true
+        required: false
       },
       especialidad:{
         type: String,
-        required: true
+        required: false
       },
       dpi:{
         type: String,
-        required: true
+        required: false
       },
       colegiado:{
         type: String,
-        required: true
+        required: false
       }
 
 });
