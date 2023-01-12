@@ -10,7 +10,7 @@ const Adulto = require('./routes/adulto');
 const Doctor = require('./routes/doctor');
 const User = require('./routes/user');
 const Login = require('./routes/login');
-
+const Documenta = require('./routes/documenta');
 const Cembarazo = require('./routes/cembarazo');
 const Cediatria = require('./routes/cediatria');
 const Cadulto = require('./routes/cadulto');
@@ -28,7 +28,7 @@ App.use('/doctor',Doctor);
 App.use('/user', User);
 App.use('/login', Login);
 App.use('/documento', Documento);
-
+App.use('/documenta', Documenta);
 App.use('/cembarazo', Cembarazo);
 App.use('/cadulto', Cadulto);
 App.use('/cediatria', Cediatria);
