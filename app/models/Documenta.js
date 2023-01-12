@@ -11,6 +11,10 @@ const DocumentaSchema = new mongoose.Schema({
     type: String,
     required: false
   },
+  codigo:{
+    type: String,
+    required: false
+  },
   medicamento:{
     type: Array,
     required: false
