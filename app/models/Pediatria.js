@@ -6,6 +6,10 @@ const PediatriaSchema = new mongoose.Schema({
     type: String,
     required: false
 },
+fechaingreso:{
+  type: String,
+  required: false 
+},
   nombres:{
     type: String,
     required: false 
