@@ -7,8 +7,8 @@ const AdultoSchema = new mongoose.Schema({
     required: false
 },
   fechaingreso:{
-  type: String,
-  required: false 
+    type: Date,
+    default: Date.now
 },
   nombres:{
     type: String,
