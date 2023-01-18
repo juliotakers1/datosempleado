@@ -33,7 +33,7 @@ fechaingreso:{
   dpi:{
     type: String,
     required: false
-  },
+  },//cambios aqui
   telefono:{
     type: String,
     required: false 
