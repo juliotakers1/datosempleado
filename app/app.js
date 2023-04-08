@@ -21,7 +21,6 @@ const Documento = require('./routes/documento');
 App.use(bodyParser.json());
 App.use(bodyParser.urlencoded({extended:false}));
 App.use(cors());
- 
 
 App.use('/embarazo',Embarazo);
 App.use('/pediatria',Pediatria);
