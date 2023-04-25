@@ -19,6 +19,7 @@ const Cadulto = require('./routes/cadulto');
 const Producto = require('./routes/producto');
 const Categoria = require('./routes/categoria');
 const Venta = require('./routes/venta');
+const Cobro = require('./routes/cobro');
 
 
 const Documento = require('./routes/documento');
@@ -41,6 +42,6 @@ App.use('/documenta', Documenta);
 App.use('/cembarazo', Cembarazo);
 App.use('/cadulto', Cadulto);
 App.use('/cediatria', Cediatria);
- 
+App.use('/cobro', Cobro);
 
 module.exports = App;
