@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const VentaSchema = new mongoose.Schema({
+const CobroSchema = new mongoose.Schema({
 
     
   paciente:{
@@ -18,6 +18,6 @@ const VentaSchema = new mongoose.Schema({
 
 });
 
-const Venta = mongoose.model('Venta',VentaSchema);
+const Cobro = mongoose.model('Cobro',CobroSchema);
  
-module.exports = Venta;
+module.exports = Cobro;
