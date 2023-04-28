@@ -10,6 +10,18 @@ const ProductoSchema = new mongoose.Schema({
         type: String,
         required: true
       },
+      miligramos:{
+        type: String,
+        required: true
+      },
+      laboratorio:{
+        type: String,
+        required: true
+      },
+      presentacion:{
+        type: String,
+        required: true
+      },
       precio:{
         type: String,
         required: true 
