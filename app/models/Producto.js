@@ -26,6 +26,10 @@ const ProductoSchema = new mongoose.Schema({
         type: String,
         required: true 
       },
+      vencimiento:{
+        type: String,
+        required: true 
+      },
       stock:{
         type: Number,
         required: true 
