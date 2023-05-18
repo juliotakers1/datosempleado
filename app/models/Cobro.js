@@ -1,7 +1,10 @@
 const mongoose = require('mongoose');
 const CobroSchema = new mongoose.Schema({
 
-    
+  codigopaciente:{
+    type: String,
+    required: false
+  }, 
   paciente:{
     type: String,
     required: false
