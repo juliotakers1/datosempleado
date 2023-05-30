@@ -20,7 +20,7 @@ const Producto = require('./routes/producto');
 const Categoria = require('./routes/categoria');
 const Venta = require('./routes/venta');
 const Cobro = require('./routes/cobro');
-
+const Examen = require('./routes/examen');
 
 const Documento = require('./routes/documento');
 App.use(bodyParser.json());
@@ -43,5 +43,6 @@ App.use('/cembarazo', Cembarazo);
 App.use('/cadulto', Cadulto);
 App.use('/cediatria', Cediatria);
 App.use('/cobro', Cobro);
+App.use('/examen', Examen);
 
 module.exports = App;
