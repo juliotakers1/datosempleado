@@ -7,7 +7,15 @@ function index(req,res){
         return res.status(204).send({message: 'NO CONTENT'});
     }).catch(error => res.status(500).send({error}));
 }
-
+async function OrdenUltimoAdulto(req,res){
+    try {
+        const lastOrder = await Cadultos.findOne({}, {_id: 1}).sort({_id: -1}).limit(1);
+        res.send({ _id: lastOrder._id });
+      } catch (error) {
+        console.error(error);
+        res.status(500).send('Server Error');
+      }
+}
 function verCadulto(req,res){
     Cadultos.findOne({id:req.body.id}) 
     .then(cadultos =>{
@@ -65,5 +73,6 @@ module.exports = {
     update,
     remove,
     find,
-    verCadulto
+    verCadulto,
+    OrdenUltimoAdulto
 }

@@ -6,6 +6,7 @@ const Router = express.Router();
 
         Router.get('/',Cadulto.index) //api.com/Consulta/
         .get('/ver/:key/:value', Cadulto.verCadulto)
+        .get('/ultimoAdulto',   Cadulto.OrdenUltimoAdulto)
         .post('/', Cadulto.create)
         .get('/:key/:value', Cadulto.find, Cadulto.show) 
         .put('/:key/:value', Cadulto.find,Cadulto.update)
