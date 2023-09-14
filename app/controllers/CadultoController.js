@@ -14,7 +14,7 @@ async function OrdenUltimoAdulto(req, res) {
         .limit(1);
       
       if (lastOrder) {
-        res.send({ _id: lastOrder._id });
+        res.send({ _id: ObjectId(lastOrder._id) });
       } else {
         res.status(404).send('No se encontraron registros');
       }
