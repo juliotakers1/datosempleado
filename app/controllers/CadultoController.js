@@ -1,5 +1,5 @@
 const Cadultos = require('../models/Cadulto');
-
+const { ObjectId } = require('mongodb');
 function index(req,res){
     Cadultos.find({}) 
     .then(cadultos =>{
