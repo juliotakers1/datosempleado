@@ -7,15 +7,22 @@ function index(req,res){
         return res.status(204).send({message: 'NO CONTENT'});
     }).catch(error => res.status(500).send({error}));
 }
-async function OrdenUltimoAdulto(req,res){
+async function OrdenUltimoAdulto(req, res) {
     try {
-        const lastOrder = await Cadultos.findOne({}, {_id: 1}).sort({_id: -1}).limit(1);
+      const lastOrder = await Cadultos.findOne({}, {_id: 1})
+        .sort({ createdAt: -1 }) // Ordenar por createdAt en orden descendente (el más reciente primero)
+        .limit(1);
+      
+      if (lastOrder) {
         res.send({ _id: lastOrder._id });
-      } catch (error) {
-        console.error(error);
-        res.status(500).send('Server Error');
+      } else {
+        res.status(404).send('No se encontraron registros');
       }
-}
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Server Error');
+    }
+  }
 function verCadulto(req,res){
     Cadultos.findOne({id:req.body.id}) 
     .then(cadultos =>{
