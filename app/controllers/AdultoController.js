@@ -16,7 +16,7 @@ function show(req,res){
 }
 async function UltimoCarnetPaciente(req, res) {
     try {
-      const lastRecord = await Adultos.findOne({}, { carnetPaciente: 1 })
+      const lastRecord = await Adulto.findOne({}, { carnetPaciente: 1 })
         .sort({ createdAt: -1 }) // Ordenar por createdAt en orden descendente (el más reciente primero)
         .limit(1);
   
