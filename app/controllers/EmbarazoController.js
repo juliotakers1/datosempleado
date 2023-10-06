@@ -14,6 +14,22 @@ function show(req,res){
     let embarazos = req.body.embarazos;
     return res.status(200).send({ embarazos});
 }
+async function UltimoCarnetPaciente(req, res) {
+    try {
+      const lastRecord = await Embarazo.findOne()
+        .sort({ carnetPaciente: -1 }) // Ordenar por carnetPaciente en orden descendente
+        .exec();
+  
+      if (lastRecord) {
+        res.send(lastRecord); // Devuelve el registro completo
+      } else {
+        res.status(404).send('No se encontraron registros');
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error en el servidor');
+    }
+  }
 function verEmbarazo(req,res){
     Embarazo.findOne({id:req.body.id}) 
     .then(embarazo =>{
@@ -63,5 +79,6 @@ module.exports = {
     update,
     remove,
     find,
-    verEmbarazo
+    verEmbarazo,
+    UltimoCarnetPaciente
 }

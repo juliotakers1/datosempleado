@@ -6,6 +6,7 @@ const Router = express.Router();
 
 Router.get('/',EmbarazoCtrl.index) //api.com/Embarazo/
         .get('/ver/:value', EmbarazoCtrl.verEmbarazo)
+        .get('/ultimo', EmbarazoCtrl.UltimoCarnetPaciente)
         .post('/', EmbarazoCtrl.create)
         .get('/:key/:value', EmbarazoCtrl.find, EmbarazoCtrl.show) 
         .put('/:key/:value', EmbarazoCtrl.find,EmbarazoCtrl.update)
