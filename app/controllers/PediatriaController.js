@@ -7,6 +7,22 @@ function index(req,res){
         return res.status(204).send({message: 'NO CONTENT'});
     }).catch(error => res.status(500).send({error}));
 }
+async function UltimoCarnetPaciente(req, res) {
+    try {
+      const lastRecord = await Pediatria.findOne()
+        .sort({ carnetPaciente: -1 }) // Ordenar por carnetPaciente en orden descendente
+        .exec();
+  
+      if (lastRecord) {
+        res.send(lastRecord); // Devuelve el registro completo
+      } else {
+        res.status(404).send('No se encontraron registros');
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error en el servidor');
+    }
+  }
 function show(req,res){
     if(req.body.error) return res.status(500).send({error});
 
@@ -63,5 +79,6 @@ module.exports = {
     update,
     remove,
     find,
-    verPediatria
+    verPediatria,
+    UltimoCarnetPaciente
 }

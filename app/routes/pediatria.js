@@ -5,7 +5,8 @@ const PediatriaCtrl = require('../controllers/PediatriaController');
 const Router = express.Router();
 
 Router.get('/',PediatriaCtrl.index) //api.com/Pediatria/
-        .get('/ver/:value', PediatriaCtrl.verPediatria)
+        .get('/ver/:value', PediatriaCtrl.verPediatria) 
+        .get('/ultimo', PediatriaCtrl.UltimoCarnetPaciente)
         .post('/', PediatriaCtrl.create)
         .get('/:key/:value', PediatriaCtrl.find, PediatriaCtrl.show) 
         .put('/:key/:value', PediatriaCtrl.find,PediatriaCtrl.update)
