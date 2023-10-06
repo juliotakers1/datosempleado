@@ -6,6 +6,7 @@ const Router = express.Router();
 
 Router.get('/',AdultoCtrl.index) //api.com/Adulto/
         .get('/ver/:value', AdultoCtrl.verAdulto)
+        .get('/ultimo', AdultoCtrl.UltimoCarnetPaciente)
         .post('/', AdultoCtrl.create)
         .get('/:key/:value', AdultoCtrl.find, AdultoCtrl.show) 
         .put('/:key/:value', AdultoCtrl.find,AdultoCtrl.update)

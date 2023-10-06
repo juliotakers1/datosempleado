@@ -14,6 +14,23 @@ function show(req,res){
     let adultos = req.body.adultos;
     return res.status(200).send({ adultos});
 }
+async function UltimoCarnetPaciente(req, res) {
+    try {
+      const lastRecord = await Adultos.findOne({}, { carnetPaciente: 1 })
+        .sort({ createdAt: -1 }) // Ordenar por createdAt en orden descendente (el más reciente primero)
+        .limit(1);
+  
+      if (lastRecord) {
+        res.send({ carnetPaciente: lastRecord.carnetPaciente });
+      } else {
+        res.status(404).send('No se encontraron registros');
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Error en el servidor');
+    }
+  }
+  
 function verAdulto(req,res){
     Adulto.findOne({id:req.body.id}) 
     .then(adulto =>{
@@ -63,5 +80,6 @@ module.exports = {
     update,
     remove,
     find,
-    verAdulto
+    verAdulto,
+    UltimoCarnetPaciente
 }
