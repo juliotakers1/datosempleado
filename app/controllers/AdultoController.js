@@ -1,12 +1,15 @@
 const Adulto = require('../models/Adulto');
 
-function index(req,res){
-    Adulto.find({}) 
-    .then(adultos =>{
-        if(adultos.length) return res.status(200).send({adultos});
-        return res.status(204).send({message: 'NO CONTENT'});
-    }).catch(error => res.status(500).send({error}));
-}
+function index(req, res) {
+    Adulto.find({})
+      .sort({ createdAt: -1 }) // Ordenar por createdAt en orden descendente (más reciente a más antiguo)
+      .then(adultos => {
+        if (adultos.length) return res.status(200).send({ adultos });
+        return res.status(204).send({ message: 'NO CONTENT' });
+      })
+      .catch(error => res.status(500).send({ error }));
+  }
+  
 function show(req,res){
     if(req.body.error) return res.status(500).send({error});
 

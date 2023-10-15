@@ -2,11 +2,13 @@ const Pediatria = require('../models/Pediatria');
 
 function index(req,res){
     Pediatria.find({}) 
+    .sort({ createdAt: -1 })
     .then(pediatrias =>{
         if(pediatrias.length) return res.status(200).send({pediatrias});
         return res.status(204).send({message: 'NO CONTENT'});
     }).catch(error => res.status(500).send({error}));
 }
+
 async function UltimoCarnetPaciente(req, res) {
     try {
       const lastRecord = await Pediatria.findOne()

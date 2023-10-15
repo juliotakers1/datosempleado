@@ -2,11 +2,13 @@ const Embarazo = require('../models/Embarazo');
 
 function index(req,res){
     Embarazo.find({}) 
+    .sort({ createdAt: -1 })
     .then(embarazos =>{
         if(embarazos.length) return res.status(200).send({embarazos});
         return res.status(204).send({message: 'NO CONTENT'});
     }).catch(error => res.status(500).send({error}));
 }
+  
 function show(req,res){
     if(req.body.error) return res.status(500).send({error});
 
