@@ -44,11 +44,15 @@ function verAdulto(req,res){
     }).catch(error => res.status(500).send({error}));
 }
 
-function create(req,res){
-    console.log(req.body);
-    new Adulto(req.body).save().then(adulto => res.status(201).send({adulto})).catch(error => res.status(500).send({error}));
-    
+function create(req, res) {
+  const newAdulto = new Adulto(req.body);
+  newAdulto.createdAt = new Date(); // Agregar la propiedad createdAt con la fecha actual
+
+  newAdulto.save()
+    .then(adulto => res.status(201).send({ adulto }))
+    .catch(error => res.status(500).send({ error }));
 }
+
 
 function update(req,res){
     if(req.body.error) return res.status(500).send({error});

@@ -40,11 +40,15 @@ function verEmbarazo(req,res){
     }).catch(error => res.status(500).send({error}));
 }
 
-function create(req,res){
-    console.log(req.body);
-    new Embarazo(req.body).save().then(embarazo => res.status(201).send({embarazo})).catch(error => res.status(500).send({error}));
-    
-}
+function create(req, res) {
+    const newEmbarazo = new Embarazo(req.body);
+    newEmbarazo.createdAt = new Date(); // Agregar la propiedad createdAt con la fecha actual
+  
+    newEmbarazo.save()
+      .then(embarazo => res.status(201).send({ embarazo }))
+      .catch(error => res.status(500).send({ error }));
+  }
+  
 
 function update(req,res){
     if(req.body.error) return res.status(500).send({error});
