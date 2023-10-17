@@ -40,11 +40,14 @@ function verPediatria(req,res){
     }).catch(error => res.status(500).send({error}));
 }
 
-function create(req,res){
-    console.log(req.body);
-    new Pediatria(req.body).save().then(pediatria => res.status(201).send({pediatria})).catch(error => res.status(500).send({error}));
-    
-}
+function create(req, res) {
+    const newPediatria = new Pediatria(req.body);
+    newPediatria.createdAt = new Date(); // Agregar la propiedad createdAt con la fecha actual
+  
+    newPediatria.save()
+      .then(pediatria => res.status(201).send({ pediatria }))
+      .catch(error => res.status(500).send({ error }));
+  }
 
 function update(req,res){
     if(req.body.error) return res.status(500).send({error});
