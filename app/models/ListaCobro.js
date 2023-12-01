@@ -3,7 +3,7 @@ const ListaCobroSchema = new mongoose.Schema({
 
     
 
-  nombres:{
+  nombre:{
     type: String,
     required: false 
   },
