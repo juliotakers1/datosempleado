@@ -15,6 +15,10 @@ const ListaCobroSchema = new mongoose.Schema({
     type: String,
     required: false
   },
+  categoria:{
+    type: String,
+    required: false
+  },
   usuario:{
     type: String,
     required: false 
