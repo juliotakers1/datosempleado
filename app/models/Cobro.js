@@ -17,6 +17,10 @@ const CobroSchema = new mongoose.Schema({
     type: Array,
     required: true
   },
+  total:{
+    type: String,
+    required: false
+  },
   
 
 });
