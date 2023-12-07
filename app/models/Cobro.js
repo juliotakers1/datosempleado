@@ -21,7 +21,10 @@ const CobroSchema = new mongoose.Schema({
     type: String,
     required: false
   },
-  
+  estado:{
+    type: String,
+    required: false
+  },
 
 });
 
