@@ -22,8 +22,10 @@ const Venta = require('./routes/venta');
 const Cobro = require('./routes/cobro');
 const Examen = require('./routes/examen');
 const ListaCobro = require('./routes/listaCobro');
-
+const ListaExamen =  require('./routes/listaExamen');
 const Documento = require('./routes/documento');
+const Orden = require('./routes/orden');
+
 App.use(bodyParser.json());
 App.use(bodyParser.urlencoded({extended:false}));
 App.use(cors());
@@ -46,4 +48,6 @@ App.use('/cediatria', Cediatria);
 App.use('/cobro', Cobro);
 App.use('/examen', Examen);
 App.use('/listaCobro', ListaCobro);
+App.use('/listaExamen', ListaExamen);
+App.use('/orden', Orden);
 module.exports = App;
