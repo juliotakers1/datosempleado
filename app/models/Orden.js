@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const AdultoSchema = new mongoose.Schema({
+const OrdenShema = new mongoose.Schema({
 
     
   fecha:{
@@ -25,6 +25,6 @@ const AdultoSchema = new mongoose.Schema({
 
 });
 
-const Adulto = mongoose.model('Adulto',AdultoSchema);
+const Orden = mongoose.model('Orden',OrdenShema);
  
-module.exports = Adulto;
+module.exports = Orden;
