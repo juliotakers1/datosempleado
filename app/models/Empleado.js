@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const IngresoSchema = new mongoose.Schema({
+const EmpleadoSchema = new mongoose.Schema({
 
     
 
@@ -7,19 +7,23 @@ const IngresoSchema = new mongoose.Schema({
   type: String,
   required: false 
 },
-  descripcion:{
+  apellido:{
     type: String,
     required: false 
   },
-  servicio:{
+  direccion:{
     type: String,
     required: false 
   },
-  cantidad:{
-    type: Number,
+  edad:{
+    type: String,
     required: false 
   },
-  fecha:{
+  profesion:{
+    type: String,
+    required: false 
+  },
+  estadocivil:{
     type: String,
     required: false 
   },
@@ -28,6 +32,6 @@ const IngresoSchema = new mongoose.Schema({
 
 });
 
-const Ingreso = mongoose.model('Ingreso',IngresoSchema);
+const Empleado = mongoose.model('Empleado',EmpleadoSchema);
  
-module.exports = Ingreso;
+module.exports = Empleado;
